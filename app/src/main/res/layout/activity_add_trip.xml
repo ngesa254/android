@@ -26,13 +26,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/toolbarImage"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/sf" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/toolbarImage"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sf" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -45,12 +45,12 @@
                     android:layout_marginLeft="10dp"
                     android:gravity="center" />
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
 
             </RelativeLayout>
 
@@ -64,8 +64,7 @@
         android:text="SAVE"
         android:textColor="@android:color/white"
         android:layout_gravity="bottom|end"
-        android:background="@color/colorPrimary"/>
-
+        android:background="@color/colorPrimaryDark"/>
 
     <include layout="@layout/content_add_trip" />
 

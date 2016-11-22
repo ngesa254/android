@@ -103,6 +103,7 @@ public class AddTripActivity extends AppCompatActivity implements OnMapReadyCall
         searchedPlace.setName("San Francisco");
         searchedPlace.setRating(4);*/
 
+        //TODO
         searchedPlace = (Place) Parcels.unwrap(getIntent()
                 .getParcelableExtra("SearchedLocation"));
 
@@ -112,6 +113,7 @@ public class AddTripActivity extends AppCompatActivity implements OnMapReadyCall
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+        //TODO:
         Glide.with(this).load(searchedPlace.getPhotoUrl()).into(toolbarImage);
 
         tvSearchedPlaceName.setText(searchedPlace.getName());
@@ -133,8 +135,8 @@ public class AddTripActivity extends AppCompatActivity implements OnMapReadyCall
                 trip.setTripName(tvTripName.getText().toString());
                 ArrayList<Integer> tripTypes = getTripTypes();
                 trip.setTripTypes(tripTypes);
+
                 FirebaseUtil.saveTrip(trip);
-                // saveTrip(trip);
 
                 Intent intent = new Intent(AddTripActivity.this, EditTripActivity.class)
                         .putExtra("Trip", Parcels.wrap(trip));

@@ -356,11 +356,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="--/--/--"
-            android:layout_toRightOf="@+id/tvBeginDate"
             android:layout_marginTop="5dp"
             android:textSize="16sp"
             android:layout_marginLeft="10dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_below="@+id/tvBeginDate"/>
 
     </RelativeLayout>
 
