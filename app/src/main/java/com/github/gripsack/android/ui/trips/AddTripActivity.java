@@ -104,7 +104,7 @@ public class AddTripActivity extends AppCompatActivity implements OnMapReadyCall
         searchedPlace.setRating(4);*/
 
         //TODO
-        searchedPlace = (Place) Parcels.unwrap(getIntent()
+       searchedPlace = (Place) Parcels.unwrap(getIntent()
                 .getParcelableExtra("SearchedLocation"));
 
 
