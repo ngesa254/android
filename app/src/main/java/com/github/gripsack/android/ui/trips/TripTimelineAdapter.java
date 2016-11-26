@@ -33,14 +33,14 @@ public class TripTimelineAdapter extends RecyclerView.Adapter<TripTimelineAdapte
     }
 
     @Override
-    public TripTimelineAdapter.PlaceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PlaceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_timeline, parent, false);
-        TripTimelineAdapter.PlaceViewHolder vh = new TripTimelineAdapter.PlaceViewHolder(view);
+        PlaceViewHolder vh = new PlaceViewHolder(view);
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(TripTimelineAdapter.PlaceViewHolder holder, int position) {
+    public void onBindViewHolder(PlaceViewHolder holder, int position) {
         Place place = places.get(position);
         holder.name.setText(place.getName());
         Glide.with(mContext).load(place.getPhotoUrl()).into(holder.icon);

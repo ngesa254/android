@@ -21,6 +21,7 @@ import com.github.gripsack.android.utils.MapUtil;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.ui.PlacePicker;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -71,7 +72,6 @@ public class EditDestinationActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_destination);
-
         ButterKnife.bind(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -110,11 +110,11 @@ public class EditDestinationActivity extends AppCompatActivity
         //TODO: DB Part
     }
 
-    private void removePlace(Marker marker){
+    private void removePlace(Marker marker) {
 
-        for (Place place:tripPlaces) {
-            if (place.getLatitude()==marker.getPosition().latitude
-                    && place.getLongitude()==marker.getPosition().longitude){
+        for (Place place : tripPlaces) {
+            if (place.getLatitude() == marker.getPosition().latitude
+                    && place.getLongitude() == marker.getPosition().longitude) {
                 tripPlaces.remove(place);
                 //TODO:Remove places from DB
             }
@@ -138,6 +138,7 @@ public class EditDestinationActivity extends AppCompatActivity
         mMap.addMarker(new MarkerOptions().position(destination).title(name)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(destination));
+
     }
 
     @Override
@@ -169,12 +170,37 @@ public class EditDestinationActivity extends AppCompatActivity
         btnNavigate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri gmmIntentUri=Uri.parse("google.navigation:q=Golden+Gate+Bridge");
+
+                for (Place place:tripPlaces) {
+                    if (place.getLatitude()==marker.getPosition().latitude
+                            && place.getLongitude()==marker.getPosition().longitude){
+                        String [] list;
+                        list=place.getName().split(" ");
+                        String url="google.navigation:q="+list[0];
+                        for (int i=1;i<list.length;i++){
+                            url=url+"+"+list[i];
+                        }
+
+                        Uri gmmIntentUri=Uri.parse(url);
+                        Intent mapIntent=new Intent(Intent.ACTION_VIEW,gmmIntentUri);
+                        mapIntent.setPackage("com.google.android.apps.maps");
+                        startActivity(mapIntent);
+                    }
+                }
+
+            }
+        });
+
+        Button btnPanorama = (Button) messageView.findViewById(R.id.btnPanorama);
+        btnPanorama.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri gmmIntentUri=Uri.parse("google.streetview:cbll="+marker.getPosition().latitude+","+marker.getPosition().longitude);
                 Intent mapIntent=new Intent(Intent.ACTION_VIEW,gmmIntentUri);
-                mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
             }
         });
+
         alertDialog.show();
     }
 
@@ -211,7 +237,6 @@ public class EditDestinationActivity extends AppCompatActivity
             case R.id.tvDone:
                 Intent intent=new Intent(this,TripTimelineActivity.class)
                         .putExtra("Places", tripPlaces);
-                       // .putExtra("Places", Parcels.wrap(tripPlaces));
                 startActivity(intent);
 
         }

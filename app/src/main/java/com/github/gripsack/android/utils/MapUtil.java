@@ -5,13 +5,12 @@ import android.util.Log;
 
 import com.github.gripsack.android.R;
 import com.github.gripsack.android.data.model.Place;
-import android.util.Log;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
+
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.io.BufferedReader;
@@ -29,7 +28,6 @@ import java.util.List;
  */
 
 public class MapUtil {
-
     public static void focusPoints(ArrayList<Place> places, GoogleMap map){
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
@@ -42,7 +40,6 @@ public class MapUtil {
             LatLng latLng=new LatLng((places.get(0).getLatitude()+0.05),places.get(0).getLongitude()+0.05);
             builder.include(latLng);
         }
-
         map.moveCamera(CameraUpdateFactory.newLatLngBounds(
                 builder.build(), 300, 300, 0));
     }

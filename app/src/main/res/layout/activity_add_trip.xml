@@ -64,7 +64,7 @@
         android:text="SAVE"
         android:textColor="@android:color/white"
         android:layout_gravity="bottom|end"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@color/colorPrimary"/>
 
     <include layout="@layout/content_add_trip" />
 

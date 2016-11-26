@@ -13,6 +13,7 @@ import java.util.ArrayList;
 //Model for the data retrieved from places API
 @Parcel
 public class Place implements Serializable {
+
     private double latitude;
     private double longitude;
     private String name;
@@ -92,9 +93,9 @@ public class Place implements Serializable {
 
     public static Place fromJSONObject(JSONObject jsonObject) {
         Place place = new Place();
-
-        String apiKey = BuildConfig.MyPlacesApiKey;
-        String ph_url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&key="+apiKey;
+//TODO:
+        String apiKey = BuildConfig.MyPlacesApiKey;//"AIzaSyBKTzZ1pACoFNqoX5AbiFZCz7TPZMjG1nQ";//
+        String ph_url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&key=" + apiKey;
 
         try {
             JSONObject location = jsonObject.getJSONObject("geometry").getJSONObject("location");

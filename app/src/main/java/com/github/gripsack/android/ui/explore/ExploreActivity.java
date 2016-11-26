@@ -23,7 +23,6 @@ import com.github.gripsack.android.ui.trips.TripsActivity;
 import com.github.gripsack.android.utils.GoogleUtil;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class ExploreActivity extends DrawerActivity {
 
@@ -44,13 +43,9 @@ public class ExploreActivity extends DrawerActivity {
     }
 
     @Override
-    protected FirebaseAuth.AuthStateListener createAuthStateListener() {
-        return new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                updateNavigationView();
-            }
-        };
+    protected void onAuthStateSignIn() {
+        updateNavigationView();
+
     }
 
     @Override
@@ -59,14 +54,14 @@ public class ExploreActivity extends DrawerActivity {
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        //fab.setVisibility(View.VISIBLE);
+        /*fab.setVisibility(View.VISIBLE);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                Intent intent=new Intent(ExploreActivity.this, AddTripActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
 

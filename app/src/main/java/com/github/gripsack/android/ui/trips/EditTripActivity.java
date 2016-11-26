@@ -33,6 +33,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.parceler.Parcels;
+
 import java.util.ArrayList;
 
 import butterknife.BindView;
@@ -121,7 +122,7 @@ public class EditTripActivity extends AppCompatActivity
 
             case R.id.lyHotel:
                 Uri gmmIntentUri = Uri.parse("geo:"+trip.getSearchDestination().getLatitude()+","+trip.getSearchDestination().getLongitude()
-                +"?q=hotels");
+                        +"?q=hotels");
                 Intent intentHotel=new Intent(Intent.ACTION_VIEW,gmmIntentUri);
                 intentHotel.setPackage("com.google.android.apps.maps");
                 startActivityForResult(intentHotel,HOTEL_PICKER_REQUEST);

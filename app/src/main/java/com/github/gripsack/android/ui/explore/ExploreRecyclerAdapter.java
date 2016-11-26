@@ -96,12 +96,10 @@ public class ExploreRecyclerAdapter extends RecyclerView.Adapter<ExploreRecycler
                             Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.item_image:
-                    Intent intent=new Intent(mContext,AddTripActivity.class);
-                    intent.putExtra("SearchedLocation", Parcels.wrap(place));
+                    Intent intent=new Intent(mContext, AddTripActivity.class)
+                            .putExtra("SearchedLocation", Parcels.wrap(places.get(getLayoutPosition())));
                     mContext.startActivity(intent);
-
                     break;
-
             }
         }
     }

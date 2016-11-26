@@ -37,7 +37,7 @@
                         android:hint="Trip Name"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -76,7 +76,6 @@
 
                 <android.support.v7.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_below="@+id/card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     card_view:cardCornerRadius="4dp"
@@ -87,24 +86,28 @@
                         android:layout_height="50dp">
 
                         <ImageView
+                            android:id="@+id/ivCityBreak"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@mipmap/type1"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"/>
 
-                        <CheckBox
+                        <ImageButton
                             android:visibility="gone"
-                            android:id="@+id/cbCityBreak"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true" />
+                            android:id="@+id/ibCityBreak"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:src ="@drawable/checkmark"
+                            android:background="@null"
+                            android:layout_margin="2dp"/>
+
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_below="@+id/card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     card_view:cardCornerRadius="4dp"
@@ -115,25 +118,28 @@
                         android:layout_height="50dp">
 
                         <ImageView
+                            android:id="@+id/ivWithFriends"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@mipmap/type2"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"/>
 
-                        <CheckBox
+                        <ImageButton
                             android:visibility="gone"
-                            android:id="@+id/cbWithFriends"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true" />
+                            android:id="@+id/ibWithFriends"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:src ="@drawable/checkmark"
+                            android:background="@null"
+                            android:layout_margin="2dp"/>
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_below="@+id/card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     card_view:cardCornerRadius="4dp"
@@ -144,25 +150,28 @@
                         android:layout_height="50dp">
 
                         <ImageView
+                            android:id="@+id/ivWithFamily"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@mipmap/type3"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"/>
 
-                        <CheckBox
+                        <ImageButton
                             android:visibility="gone"
-                            android:id="@+id/cbWithFamily"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true" />
+                            android:id="@+id/ibWithFamily"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:src ="@drawable/checkmark"
+                            android:background="@null"
+                            android:layout_margin="2dp"/>
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_below="@+id/card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     card_view:cardCornerRadius="4dp"
@@ -173,25 +182,28 @@
                         android:layout_height="50dp">
 
                         <ImageView
+                            android:id="@+id/ivRomantic"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@mipmap/type4"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"/>
 
-                        <CheckBox
+                        <ImageButton
                             android:visibility="gone"
-                            android:id="@+id/cbRomantic"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true" />
+                            android:id="@+id/ibRomantic"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:src ="@drawable/checkmark"
+                            android:background="@null"
+                            android:layout_margin="2dp" />
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_below="@+id/card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     card_view:cardCornerRadius="4dp"
@@ -202,25 +214,28 @@
                         android:layout_height="50dp">
 
                         <ImageView
+                            android:id="@+id/ivRelaxing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@mipmap/type5"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"/>
 
-                        <CheckBox
+                        <ImageButton
                             android:visibility="gone"
-                            android:id="@+id/cbRelaxing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true" />
+                            android:id="@+id/ibRelaxing"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:src ="@drawable/checkmark"
+                            android:background="@null"
+                            android:layout_margin="2dp" />
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_below="@+id/card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     card_view:cardCornerRadius="4dp"
@@ -231,25 +246,28 @@
                         android:layout_height="50dp">
 
                         <ImageView
+                            android:id="@+id/ivCulture"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@mipmap/type6"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"/>
 
-                        <CheckBox
+                        <ImageButton
                             android:visibility="gone"
-                            android:id="@+id/cbCulture"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true" />
+                            android:id="@+id/ibCulture"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:src ="@drawable/checkmark"
+                            android:background="@null"
+                            android:layout_margin="2dp"/>
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_below="@+id/card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     card_view:cardCornerRadius="4dp"
@@ -260,25 +278,28 @@
                         android:layout_height="50dp">
 
                         <ImageView
+                            android:id="@+id/ivDisappear"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@mipmap/type7"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"/>
 
-                        <CheckBox
+                        <ImageButton
                             android:visibility="gone"
-                            android:id="@+id/cbDisappear"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true" />
+                            android:id="@+id/ibDisappear"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:src ="@drawable/checkmark"
+                            android:background="@null"
+                            android:layout_margin="2dp"/>
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_below="@+id/card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     card_view:cardCornerRadius="4dp"
@@ -289,25 +310,28 @@
                         android:layout_height="50dp">
 
                         <ImageView
+                            android:id="@+id/ivAdventure"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@mipmap/type8"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"/>
 
-                        <CheckBox
+                        <ImageButton
                             android:visibility="gone"
-                            android:id="@+id/cbAdventure"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true" />
+                            android:id="@+id/ibAdventure"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:src ="@drawable/checkmark"
+                            android:background="@null"
+                            android:layout_margin="2dp"/>
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_below="@+id/card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     card_view:cardCornerRadius="4dp"
@@ -318,18 +342,22 @@
                         android:layout_height="50dp">
 
                         <ImageView
+                            android:id="@+id/ivCulinary"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@mipmap/type9"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"/>
 
-                        <CheckBox
+                        <ImageButton
                             android:visibility="gone"
-                            android:id="@+id/cbCulinary"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true" />
+                            android:id="@+id/ibCulinary"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:src ="@drawable/checkmark"
+                            android:background="@null"
+                            android:layout_margin="2dp" />
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
@@ -359,6 +387,7 @@
             android:layout_marginTop="5dp"
             android:textSize="16sp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:gravity="center"
             android:layout_below="@+id/tvBeginDate"/>
 

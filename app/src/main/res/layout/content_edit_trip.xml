@@ -120,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/tvLocationTitle"
                         android:textSize="16sp"
-                        android:text="Locations"
+                        android:text="Destinations"
                         android:textColor="#1F2C33"
                         android:textStyle="bold"
                         android:layout_marginBottom="5dp"/>
@@ -130,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/tvLocationDescription"
                         android:textSize="14sp"
-                        android:text="Add location to your trip"
+                        android:text="Add destination to your trip"
                         android:textStyle="bold"
                         android:layout_marginTop="5dp" />
 
