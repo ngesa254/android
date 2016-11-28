@@ -97,7 +97,7 @@ public class ExploreRecyclerAdapter extends RecyclerView.Adapter<ExploreRecycler
                     break;
                 case R.id.item_image:
                     Intent intent=new Intent(mContext, AddTripActivity.class)
-                            .putExtra("SearchedLocation", Parcels.wrap(places.get(getLayoutPosition())));
+                            .putExtra("SearchedLocation", Parcels.wrap(place));
                     mContext.startActivity(intent);
                     break;
             }

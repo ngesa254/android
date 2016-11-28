@@ -21,6 +21,7 @@ import com.github.gripsack.android.data.model.Place;
 import com.github.gripsack.android.data.model.Trip;
 import com.github.gripsack.android.data.model.TripTypes;
 import com.github.gripsack.android.ui.companions.CompanionsActivity;
+import com.github.gripsack.android.ui.explore.ExploreActivity;
 import com.github.gripsack.android.utils.MapUtil;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -129,8 +130,9 @@ public class EditTripActivity extends AppCompatActivity
                 break;
 
             case R.id.tvDone:
-               /* Intent intent=new Intent(this,TripTimelineActivity.class)
-                        .putExtra("Places", Parcels.wrap(pla));*/
+                Intent intent=new Intent(this,ExploreActivity.class);
+                startActivity(intent);
+                finish();
         }
 
     }

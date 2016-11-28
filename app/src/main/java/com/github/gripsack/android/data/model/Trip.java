@@ -10,15 +10,20 @@ import java.util.ArrayList;
 
 @Parcel
 public class Trip {
+    private String tripId;
     private String tripName;
     private String beginDate;
     private Place searchDestination;
     private ArrayList<Integer> tripTypes;
-    private ArrayList<Place> destinations;
+    private ArrayList<String> destinations;
     private ArrayList<User> collaborators;
 
     public Trip(){
 
+    }
+
+    public void setTripId(String tripId) {
+        this.tripId = tripId;
     }
 
     public void setBeginDate(String beginDate) {
@@ -37,7 +42,7 @@ public class Trip {
         this.tripTypes = tripTypes;
     }
 
-    public void setDestinations(ArrayList<Place> destinations) {
+    public void setDestinations(ArrayList<String> destinations) {
         this.destinations = destinations;
     }
 
@@ -61,11 +66,15 @@ public class Trip {
         return tripName;
     }
 
-    public ArrayList<Place> getDestinations() {
+    public ArrayList<String> getDestinations() {
         return destinations;
     }
 
     public ArrayList<User> getCollaborators() {
         return collaborators;
+    }
+
+    public String getTripId() {
+        return tripId;
     }
 }

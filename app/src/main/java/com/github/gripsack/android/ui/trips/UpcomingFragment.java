@@ -51,7 +51,7 @@ public class UpcomingFragment extends Fragment {
             return;
         }
 
-        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 1);
         mRecyclerView.setLayoutManager(layoutManager);
 
         if (savedInstanceState != null) {
@@ -90,6 +90,8 @@ public class UpcomingFragment extends Fragment {
                 String key = this.getRef(position).getKey();
                 Timber.d("position %d key %s", position, key);
                 viewHolder.setName(model.getTripName(), key);
+                viewHolder.setDate(model.getBeginDate(),key);
+                viewHolder.setImage(model.getSearchDestination().getPhotoUrl(),key);
             }
         };
     }

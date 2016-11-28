@@ -17,6 +17,7 @@ import com.github.gripsack.android.BuildConfig;
 import com.github.gripsack.android.R;
 import com.github.gripsack.android.data.model.Place;
 import com.github.gripsack.android.data.model.Trip;
+import com.github.gripsack.android.utils.FirebaseUtil;
 import com.github.gripsack.android.utils.MapUtil;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -100,14 +101,9 @@ public class EditDestinationActivity extends AppCompatActivity
         getTripPlaces();
     }
 
+    //Get previous saved trips
     private void getTripPlaces(){
-        //TODO:DB part. Is there any places previously saved? Add
-        //TODO: add to "places"
-        //TODO: add to map (Call addMarker(String name,LatLng destination))
-    }
-
-    private void addPlace(Place place){
-        //TODO: DB Part
+        ///tripPlaces=FirebaseUtil.getTripDestinations(trip.getTripId());
     }
 
     private void removePlace(Marker marker) {
@@ -116,7 +112,6 @@ public class EditDestinationActivity extends AppCompatActivity
             if (place.getLatitude() == marker.getPosition().latitude
                     && place.getLongitude() == marker.getPosition().longitude) {
                 tripPlaces.remove(place);
-                //TODO:Remove places from DB
             }
         }
         marker.remove();
@@ -235,10 +230,15 @@ public class EditDestinationActivity extends AppCompatActivity
             case R.id.btnRecommendedList:
                 break;
             case R.id.tvDone:
-                Intent intent=new Intent(this,TripTimelineActivity.class)
-                        .putExtra("Places", tripPlaces);
-                startActivity(intent);
+                FirebaseUtil.removeDestinations(trip.getTripId());
+                for (int i=0;i<tripPlaces.size();i++){
+                    FirebaseUtil.savePlace(tripPlaces.get(i));
+                    FirebaseUtil.saveTripDestinations(tripPlaces.get(i).getPlaceid(),trip.getTripId());
+                }
 
+                Intent intent=new Intent(this,EditTripActivity.class).putExtra("Trip", Parcels.wrap(trip));
+                startActivity(intent);
+                finish();
         }
     }
 
@@ -267,8 +267,6 @@ public class EditDestinationActivity extends AppCompatActivity
                 Place place= null;
                 try {
                     place = Place.fromJSONObject(response.getJSONObject("result"));
-                    addPlace(place);
-                    tripPlaces.add(place);
                     Toast.makeText(EditDestinationActivity.this, place.getName(), Toast.LENGTH_LONG).show();
                 } catch (JSONException e) {
                     e.printStackTrace();

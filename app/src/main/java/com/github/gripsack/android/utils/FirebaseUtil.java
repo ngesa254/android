@@ -7,8 +7,14 @@ import com.github.gripsack.android.data.model.Trip;
 import com.github.gripsack.android.data.model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 import timber.log.Timber;
 
@@ -54,7 +60,6 @@ public class FirebaseUtil {
         return null;
     }
 
-
     public static DatabaseReference getCurrentUserBucketPlacesRef() {
         DatabaseReference places = getCurrentUserPlacesRef();
         if (places != null) {
@@ -70,7 +75,6 @@ public class FirebaseUtil {
         }
         return null;
     }
-
 
     public static DatabaseReference getCompanionsRef() {
         return getBaseRef().child("companions");
@@ -146,6 +150,7 @@ public class FirebaseUtil {
             return;
         }
         String tripId = getTripsRef().push().getKey();
+        trip.setTripId(tripId);
         getTripsRef().child(tripId).setValue(trip);
         user.child("trips")
                 .child(tripId)
@@ -154,6 +159,15 @@ public class FirebaseUtil {
 
     public static void savePlace(Place place) {
         getPlacesRef().child(place.getPlaceid()).setValue(place);
+    }
+
+    public static void saveTripDestinations(String placeId,String tripId){
+        DatabaseReference trip=getTripsRef().child(tripId);
+        if(trip !=null){
+            trip.child("destinations")
+                    .child(placeId)
+                    .setValue(true);
+        }
     }
 
     public static void likePlace(String placeId) {
@@ -175,5 +189,30 @@ public class FirebaseUtil {
                     .child(placeId)
                     .setValue(true);
         }
+    }
+
+    public static void removeDestinations(String tripId){
+        getTripsRef().child(tripId).child("destinations").removeValue();
+    }
+
+    public static ArrayList<Place> getTripDestinations(String tripId) {
+        ArrayList<Place> placeList = new ArrayList<Place>();
+        Query query = getBaseRef().orderByChild("trips").equalTo(tripId);
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.child("destinations").getChildren()) {
+                    Place place = snapshot.getValue(Place.class);
+                    placeList.add(place);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        return placeList;
     }
 }

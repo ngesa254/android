@@ -16,29 +16,47 @@
 
 package com.github.gripsack.android.ui.trips;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.github.gripsack.android.R;
+import com.github.gripsack.android.utils.GlideUtil;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class TripViewHolder extends RecyclerView.ViewHolder {
 
     private final View mView;
-    private TextView mTripName;
+    private TextView tvTripName;
+    private TextView tvTripDate;
+    private ImageView ivTripImage;
 
     public TripViewHolder(View itemView) {
         super(itemView);
         mView = itemView;
-        mTripName = (TextView) mView.findViewById(R.id.tripName);
+        tvTripName = (TextView) mView.findViewById(R.id.tvTripName);
+        tvTripDate=(TextView)mView.findViewById(R.id.tvTripDate);
+        ivTripImage=(ImageView)mView.findViewById(R.id.ivTripImage);
+
     }
 
     public void setName(String name, final String uid) {
-        mTripName.setText(name);
-        mTripName.setOnClickListener(new View.OnClickListener() {
+        tvTripName.setText(name);
+        tvTripName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             }
         });
+    }
+    public void setImage(String imageUrl, final String uid) {
+        GlideUtil.loadProfilePhoto(imageUrl, ivTripImage);
+    }
+
+    public void setDate(String date, final String uid) {
+        tvTripDate.setText(date);
     }
 }

@@ -4,6 +4,7 @@ package com.github.gripsack.android.ui.trips;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 
 import com.github.gripsack.android.R;
 import com.github.gripsack.android.ui.TabFragmentsActivity;
