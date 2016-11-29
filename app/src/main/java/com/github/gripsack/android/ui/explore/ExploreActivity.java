@@ -54,7 +54,7 @@ public class ExploreActivity extends DrawerActivity {
         super.onCreate(savedInstanceState);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setVisibility(View.VISIBLE);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +62,7 @@ public class ExploreActivity extends DrawerActivity {
                Intent intent=new Intent(ExploreActivity.this, AddTripActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
 
