@@ -40,14 +40,14 @@ public class MapsFragment extends Fragment {
         view.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         trips=new ArrayList<Trip>();
-        getTripsData();
+        //getTripsData();
 
         mapsAdapter = new MapsAdapter(getActivity(), trips);
         view.setAdapter(mapsAdapter);
         return rootView;
     }
 
-    private void getTripsData(){
+  /*  private void getTripsData(){
         Trip trip=new Trip();
         trip.setTripName("San Francisco Trip");
         trip.setBeginDate("11-30-2016");
@@ -69,6 +69,6 @@ public class MapsFragment extends Fragment {
         place.setLatitude(37.7785189);
         trip.setSearchDestination(place);
         trips.add(trip);
-    }
+    }*/
 
 }
