@@ -78,5 +78,7 @@
     <string name="title_activity_destinations">DestinationsActivity</string>
     <string name="title_activity_trip_timeline">TripTimelineActivity</string>
 
+    <string name="album_name">GripSack</string>
+
 
 </resources>

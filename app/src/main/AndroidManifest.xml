@@ -8,6 +8,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"></uses-feature>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <!-- PlacePicker also requires OpenGL ES version 2 -->
     <uses-feature
@@ -153,18 +157,18 @@
             android:name=".ui.trips.EditDestinationActivity"
             android:label="@string/title_activity_add_trip"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".ui.trips.DisplayTripActivity" />
         <activity
             android:name=".ui.destinations.DestinationsActivity"
             android:label="@string/title_activity_destinations"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.trips.TripTimelineActivity"
             android:label="@string/title_activity_trip_timeline"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".ui.trips.AddPhotoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -18,6 +18,7 @@ import com.github.gripsack.android.ui.media.MediaActivity;
 import com.github.gripsack.android.ui.places.PlacesActivity;
 import com.github.gripsack.android.ui.settings.SettingsActivity;
 import com.github.gripsack.android.ui.timeline.TimelineActivity;
+import com.github.gripsack.android.ui.trips.AddPhotoActivity;
 import com.github.gripsack.android.ui.trips.AddTripActivity;
 import com.github.gripsack.android.ui.trips.TripsActivity;
 import com.github.gripsack.android.utils.GoogleUtil;
@@ -53,15 +54,15 @@ public class ExploreActivity extends DrawerActivity {
         super.onCreate(savedInstanceState);
 
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setVisibility(View.VISIBLE);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent=new Intent(ExploreActivity.this, AddTripActivity.class);
+               Intent intent=new Intent(ExploreActivity.this, AddPhotoActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 
 
