@@ -59,7 +59,7 @@ public class ExploreActivity extends DrawerActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent=new Intent(ExploreActivity.this, AddPhotoActivity.class);
+               Intent intent=new Intent(ExploreActivity.this, AddTripActivity.class);
                 startActivity(intent);
             }
         });

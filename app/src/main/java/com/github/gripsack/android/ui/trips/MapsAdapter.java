@@ -1,6 +1,7 @@
 package com.github.gripsack.android.ui.trips;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -26,6 +27,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONObject;
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,7 +44,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MapsAdapter extends
         RecyclerView.Adapter<MapsAdapter.ViewHolder> {
 
-
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         @BindView(R.id.tvTripName)
@@ -57,22 +58,19 @@ public class MapsAdapter extends
 
         public ViewHolder(View itemView) {
             super(itemView);
-
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            int position = getLayoutPosition();
+            int position = getLayoutPosition(); // gets item position
 
         }
-
     }
 
     private static List<Trip> mTrips;
     private static Context mContext;
-    private static Bundle mBundle;
 
     public MapsAdapter(Context context, List<Trip> trips) {
         mTrips = trips;
@@ -104,14 +102,13 @@ public class MapsAdapter extends
         viewHolder.tvTripName.setText(trip.getTripName());
         viewHolder.tvTripDate.setText(trip.getBeginDate());
 
-        viewHolder.map.onCreate(mBundle);
         viewHolder.map.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
-                /*LatLng sf = new LatLng(37.773972, -122.431297);
+                LatLng sf = new LatLng(37.773972, -122.431297);
                 googleMap.addMarker(new MarkerOptions().position(sf).title("Marker")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)));
-                googleMap.moveCamera(CameraUpdateFactory.newLatLng(sf));*/
+                googleMap.moveCamera(CameraUpdateFactory.newLatLng(sf));
             }
 
         });

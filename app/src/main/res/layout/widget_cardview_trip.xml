@@ -43,7 +43,7 @@
             android:layout_marginLeft="@dimen/md_keylines"
             tools:text="Palais Garnier"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/tvTripDate"
@@ -54,7 +54,7 @@
             tools:text="15 January"
             android:textSize="16sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
 
         <Button

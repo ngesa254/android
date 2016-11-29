@@ -29,18 +29,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:apiKey="AIzaSyBKTzZ1pACoFNqoX5AbiFZCz7TPZMjG1nQ"
             android:id="@+id/map" />
 
-        <!--<de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivProfileImage"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignBottom="@+id/map"
-            android:src="@drawable/girl_profile"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
-            app:civ_border_color="@android:color/white"
-            app:civ_border_width="1dp"/>-->
 
         <TextView
             android:id="@+id/tvTripName"
@@ -50,8 +41,7 @@
             android:layout_marginLeft="@dimen/md_keylines"
             tools:text="Palais Garnier"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textColor="@android:color/black"
-            android:layout_toRightOf="@+id/ivProfileImage"/>
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/tvTripDate"
@@ -62,8 +52,7 @@
             tools:text="15 January"
             android:textSize="16sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textColor="@android:color/white"
-            android:layout_toRightOf="@+id/ivProfileImage"/>
+            android:textColor="@android:color/black" />
 
 
         <Button

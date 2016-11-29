@@ -17,6 +17,8 @@ import com.github.gripsack.android.data.model.Trip;
 import com.github.gripsack.android.utils.FirebaseUtil;
 import com.google.firebase.database.Query;
 
+import java.util.ArrayList;
+
 import timber.log.Timber;
 
 import static com.github.gripsack.android.utils.FirebaseUtil.getCurrentUserId;
@@ -92,6 +94,7 @@ public class UpcomingFragment extends Fragment {
                 viewHolder.setName(model.getTripName(), key);
                 viewHolder.setDate(model.getBeginDate(),key);
                 viewHolder.setImage(model.getSearchDestination().getPhotoUrl(),key);
+
             }
         };
     }

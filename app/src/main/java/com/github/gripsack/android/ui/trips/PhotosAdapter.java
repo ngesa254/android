@@ -1,6 +1,8 @@
 package com.github.gripsack.android.ui.trips;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -46,12 +48,12 @@ public class PhotosAdapter extends
     }
 
     // Store a member variable for the contacts
-    private static List<String> mPhotos;
+    private static List<Bitmap> mPhotos;
     // Store the context for easy access
     private static Context mContext;
 
     // Pass in the contact array into the constructor
-    public PhotosAdapter(Context context, List<String> photos) {
+    public PhotosAdapter(Context context, List<Bitmap> photos) {
         mPhotos = photos;
         mContext = context;
     }
@@ -77,13 +79,13 @@ public class PhotosAdapter extends
     @Override
     public void onBindViewHolder(PhotosAdapter.ViewHolder viewHolder, int position) {
         // Get the data model based on position
-        String photoUrl = mPhotos.get(position);
+        Bitmap photo = mPhotos.get(position);
 
-        viewHolder.ivPhoto.setImageResource(0);
+        viewHolder.ivPhoto.setImageBitmap(photo);
       ;
-        if (!TextUtils.isEmpty(photoUrl)) {
+       /* if (!TextUtils.isEmpty(photoUrl)) {
             Glide.with(getContext()).load(photoUrl).into(viewHolder.ivPhoto);
-        }
+        }*/
 
     }
     @Override

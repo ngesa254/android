@@ -7,8 +7,14 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 
 import com.github.gripsack.android.R;
+import com.github.gripsack.android.data.model.User;
 import com.github.gripsack.android.ui.TabFragmentsActivity;
 import com.github.gripsack.android.ui.navigation.ViewPagerAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class TripsActivity extends TabFragmentsActivity {
 

@@ -103,6 +103,7 @@ public class EditDestinationActivity extends AppCompatActivity
 
     //Get previous saved trips
     private void getTripPlaces(){
+        //TODO:Get trip places
         ///tripPlaces=FirebaseUtil.getTripDestinations(trip.getTripId());
     }
 

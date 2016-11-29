@@ -118,16 +118,16 @@ public class AddTripActivity extends AppCompatActivity implements OnMapReadyCall
         searchedPlace= new Place();
 
         /*TODO:To test, It will close*/
-        /*searchedPlace.setLatitude(37.773972);
+        searchedPlace.setLatitude(37.773972);
         searchedPlace.setLongitude(-122.431297);
         searchedPlace.setName("San Francisco");
         searchedPlace.setRating(4);
         String tripId = FirebaseUtil.getPlacesRef().push().getKey();
         searchedPlace.setPlaceid(tripId);
         searchedPlace.setPhotoUrl("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&key=AIzaSyCcMbLMaGDqEElvOqf3Ql0J9GZvuTr9LZA&photoreference=CoQBdwAAAFRBzZNFQ3gcF7BeFSrOPW6dCRL16rn7eLQOc6VpBNCAK13PLkOyiCiBvnms7m5pk_gzfMDDaElEuZKq4zRZDiDL9mRZFrho3T6Z6Bgqm9fp3zd4izGephdlRh3b2GnFrMkZc10bxzrt1dcshQtaxTj8gr4LovdOi2dKdGJyOIZ1EhApwxBOdCiFNF0Yl74i1Gd3GhSyinKjAlDnihZfPU2E8zCmWyHFJw");
-*/
-        searchedPlace=(Place) Parcels.unwrap(getIntent()
-                .getParcelableExtra("SearchedLocation"));
+
+        /*searchedPlace=(Place) Parcels.unwrap(getIntent()
+                .getParcelableExtra("SearchedLocation"));*/
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

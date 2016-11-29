@@ -56,6 +56,8 @@ public class EditTripActivity extends AppCompatActivity
     LinearLayout lyCompanion;
     @BindView(R.id.lyHotel)
     LinearLayout lyHotel;
+    @BindView(R.id.lyPhotos)
+    LinearLayout lyPhotos;
     @BindView(R.id.tvDone)
     TextView tvDone;
 
@@ -82,6 +84,8 @@ public class EditTripActivity extends AppCompatActivity
         lyCompanion.setOnClickListener(this);
         lyHotel.setOnClickListener(this);
         lyLocation.setOnClickListener(this);
+        lyPhotos.setOnClickListener(this);
+
         tvDone.setOnClickListener(this);
 
     }
@@ -129,6 +133,11 @@ public class EditTripActivity extends AppCompatActivity
                 startActivityForResult(intentHotel,HOTEL_PICKER_REQUEST);
                 break;
 
+            case R.id.lyPhotos:
+                Intent intentPhotos=new Intent(this,AddPhotoActivity.class)
+                        .putExtra("Trip", Parcels.wrap(trip));;
+                startActivity(intentPhotos);
+                break;
             case R.id.tvDone:
                 Intent intent=new Intent(this,ExploreActivity.class);
                 startActivity(intent);

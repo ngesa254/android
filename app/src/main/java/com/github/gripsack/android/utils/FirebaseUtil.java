@@ -195,24 +195,16 @@ public class FirebaseUtil {
         getTripsRef().child(tripId).child("destinations").removeValue();
     }
 
-    public static ArrayList<Place> getTripDestinations(String tripId) {
-        ArrayList<Place> placeList = new ArrayList<Place>();
-        Query query = getBaseRef().orderByChild("trips").equalTo(tripId);
 
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.child("destinations").getChildren()) {
-                    Place place = snapshot.getValue(Place.class);
-                    placeList.add(place);
-                }
-            }
+    public static void saveImage(String imageEncoded,String tripId){
+        String key = getBaseRef().child("photos").push().getKey();
+        getBaseRef().child("photos").child(key).setValue(imageEncoded);
+        DatabaseReference trip=getTripsRef().child(tripId);
+        if(trip !=null){
+            trip.child("photos")
+                    .child(key)
+                    .setValue(true);
+        }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
-
-        return placeList;
     }
 }
