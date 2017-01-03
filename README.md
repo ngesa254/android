@@ -6,7 +6,6 @@
 
 The following **required** functionality is completed:
 
-* User can act on places
 * [X] A User can sign in to the app with facebook or google
 * [X] A User can send invitation to their contacts to use an App
 
