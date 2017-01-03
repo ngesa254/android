@@ -63,9 +63,7 @@ The following **bonus** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
-
-<img src='https://www.youtube.com/watch?v=n_20aWs4MTE' title='App Walkthrough' width='' alt='App Walkthrough' />
+Here's a walkthrough of implemented user stories: https://www.youtube.com/my_videos?o=U
 
 ## Notes
 
