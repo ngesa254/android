@@ -1,4 +1,4 @@
-# Project - *Gripsack*
+# Project - *Gripsack* Clone
 
 **Gripsack** is an android app that allows a user to plan trips, assist a user during their active trip and share completed trips with friends. 
 
